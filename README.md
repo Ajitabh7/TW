@@ -18,9 +18,8 @@ STEPS:
 2. change the directory to terraform 
   cd TW/terraform
  
-3. Initialize and apply terraform
-   terraform init
-   terraform apply
+3. Initialize and apply terraform -->
+   terraform init  &&  terraform apply
 
  MediaWiki URL can be accessible at  http://{AWS_Ec2_instance_publicip}:30301/wiki
 
