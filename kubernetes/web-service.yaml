@@ -1,0 +1,14 @@
+kind: Service 
+apiVersion: v1 
+metadata:
+  name: wikimedia-web
+spec:
+  type: NodePort
+
+  selector:
+    app: wikimedia 
+
+  ports:
+    - nodePort: 30301
+      port: 80
+      targetPort: 80

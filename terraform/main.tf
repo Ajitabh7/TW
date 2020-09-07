@@ -99,8 +99,8 @@ resource "aws_security_group" "nodeport" {
     vpc_id                      = "${aws_vpc.main_vpc.id}"
 
     ingress {
-      from_port                 = 30163
-      to_port                   = 30163
+      from_port                 = 30301
+      to_port                   = 30301
       protocol                  = "TCP"
       cidr_blocks               = ["0.0.0.0/0"]
     }
@@ -169,9 +169,9 @@ resource "aws_instance" "web" {
       "sudo minikube start --vm-driver=none",
       "sleep 30",
       "sudo apt-get install git -y",
-      "sudo git clone https://github.com/Ajitabh7/TW.git && cd TW && cd kubernetes && sudo kubectl create -f secrets.yaml -f persistent-volumes.yaml",
-      "sudo kubectl create  -f mariadb-deployment.yaml -f mariadb-svc.yaml",
-      "sudo kubectl create -f app-deployment.yaml -f web-service.yaml"
+      "sudo git clone https://github.com/Ajitabh7/TW.git && cd TW && cd kubernetes && sudo kubectl create -f secrets.yaml -f pv.yaml",
+      "sudo kubectl create  -f db-deployment.yaml -f db-service.yaml",
+      "sudo kubectl create -f mediwiki-deployment.yaml -f web-service.yaml"
 
     ]
   }
