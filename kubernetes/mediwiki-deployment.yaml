@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mediawiki
-          image: ajitabh7/mediawiki7777777:v1
+          image: ajitabh7/mediawiki7:v1
           ports:
             - containerPort: 80
               name: httpd-port
